@@ -1,0 +1,4 @@
+streamlit
+pyttsx3
+speech_recognition
+transformers
