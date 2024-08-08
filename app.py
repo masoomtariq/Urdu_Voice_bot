@@ -35,7 +35,7 @@ def main():
 
     # Record audio
     audio_file = "audio.wav"
-    webrtc_streamer(key="audio_file", video=False)
+    webrtc_streamer(key="audio_file")
     if st.button("Record Urdu Audio"):
         with sr.Microphone() as source:
             st.audio(source)
