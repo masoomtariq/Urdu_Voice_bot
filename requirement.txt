@@ -1,4 +1,4 @@
 streamlit
+SpeechRecognition
 pyttsx3
-speech_recognition
 transformers
