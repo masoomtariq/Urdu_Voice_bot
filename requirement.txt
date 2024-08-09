@@ -1,4 +1,0 @@
-streamlit
-SpeechRecognition
-pyttsx3
-transformers
