@@ -7,6 +7,7 @@ import google.generativeai as genai
 from gtts import gTTS
 from dotenv import load_dotenv
 import os
+import pyAudio
 
 load_dotenv()
 
@@ -85,13 +86,13 @@ def Urdu_audio_to_text(temp_recording_path):
 
 def response_to_urdu_audio(text, lang='ur'):
     tts = gTTS(text=text, lang=lang)
-    with tempfile.NamedTemporaryFile(suffix=".wav") as temp_audio:
-        tts_audio_path = temp_audio.name
+    #with tempfile.NamedTemporaryFile(suffix=".wav") as temp_audio:
+    #tts_audio_path = temp_audio.name
     #tts_audio_path = tempfile.NamedTemporaryFile(suffix=".mp3", delete=False).name
-        tts.save(tts_audio_path)
+    #tts.save(tts_audio_path)
 
     # Get the base64 string of the audio file
-        audio_base64 = get_audio_base64(tts_audio_path)
+    audio_base64 = get_audio_base64(tts)
     #os.remove(tts_audio_path)
 
     # Autoplay audio using HTML and JavaScript
