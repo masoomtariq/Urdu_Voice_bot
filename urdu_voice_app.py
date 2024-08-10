@@ -28,7 +28,7 @@ def main():
     st.sidebar.write("")  # Adds one line of space
 
     
-    st.sidebar.write("Developed by m :blue[Masoom Tariq]")
+    st.sidebar.write("Developed by :blue[Masoom Tariq]")
 
     urdu_recorder = audio_recorder(text='بولیۓ', icon_size="1x", icon_name="microphone-lines", key="urdu_recorder")
 
@@ -65,7 +65,7 @@ def main():
 
                 st.markdown(response_audio_html, unsafe_allow_html=True)
 
-                #st.info(response_text)
+                st.info(response_text)
 
 
 def Urdu_audio_to_text(temp_recording_path):
