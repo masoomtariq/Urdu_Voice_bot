@@ -4,4 +4,3 @@ gtts
 audio_recorder_streamlit
 google.generativeai
 python-dotenv
-pyaudio
