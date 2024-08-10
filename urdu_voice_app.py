@@ -7,7 +7,7 @@ import google.generativeai as genai
 from gtts import gTTS
 from dotenv import load_dotenv
 import os
-import pyAudio
+import pyaudio
 
 load_dotenv()
 
