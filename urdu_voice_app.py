@@ -21,7 +21,7 @@ genai.configure(api_key=GEMINI_API_KEY)
 def main():
     st.title("Urdu Voice Chatbot")
     
-    
+    st.sidebar.title('''About this App''')
     st.sidebar.info(f'''This a Urdu voice chatbot created using Streamlit. It takes in Urdu voice input and response in Urdu voice''')
 
     st.sidebar.write("")  # Adds one line of space
@@ -62,10 +62,11 @@ def main():
             with col2:
                 # Convert the response text to speech
                 response_audio_html = response_to_urdu_audio(response_text)
+                st.audio(response_audio_html)
 
-                st.markdown(response_audio_html, unsafe_allow_html=True)
+                #st.markdown(response_audio_html, unsafe_allow_html=True)
 
-                st.info(response_text)
+                #st.info(response_text)
 
 
 def Urdu_audio_to_text(temp_recording_path):
