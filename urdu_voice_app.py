@@ -66,7 +66,7 @@ def main():
 
                 st.markdown(response_audio_html, unsafe_allow_html=True)
 
-                #st.info(response_text)
+                st.info(response_text)
 
 
 def Urdu_audio_to_text(temp_recording_path):
