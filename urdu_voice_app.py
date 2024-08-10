@@ -102,14 +102,6 @@ def response_to_urdu_audio(text, lang='ur'):
     </audio>
     """
     return audio_html
-'''
-# Function to encode the audio file to base64
-def get_audio_base64(file_path):
-    with open(file_path, "rb") as audio_file:
-        audio_bytes = audio_file.read()
-    audio_response = base64.b64encode(audio_bytes).decode()
-    return audio_response
-'''
 
 def llmModelResponse(text):
     prompt = f"""Kindly answer this question in Urdu langauge. 
