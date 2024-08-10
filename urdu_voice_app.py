@@ -86,10 +86,13 @@ def Urdu_audio_to_text(temp_recording_path):
 def response_to_urdu_audio(text, lang='ur'):
     tts = gTTS(text=text, lang=lang)
     tts_audio_path = tempfile.NamedTemporaryFile(suffix=".mp3", delete=False).name
-    #tts.save(tts_audio_path)
+    tts.save(tts_audio_path)
 
     # Get the base64 string of the audio file
-    audio_base64 = get_audio_base64(tts_audio_path)
+    with open(tts_audio_path, 'rb') as audio_file:
+        audio_bytes = audio_file.read()
+    audio_base64 = base64.b64encode(audio_bytes).decode()
+    os.remove(tts_audio_path)
 
     # Autoplay audio using HTML and JavaScript
     audio_html = f"""
@@ -99,13 +102,14 @@ def response_to_urdu_audio(text, lang='ur'):
     </audio>
     """
     return audio_html
-
+'''
 # Function to encode the audio file to base64
 def get_audio_base64(file_path):
     with open(file_path, "rb") as audio_file:
         audio_bytes = audio_file.read()
     audio_response = base64.b64encode(audio_bytes).decode()
     return audio_response
+'''
 
 def llmModelResponse(text):
     prompt = f"""Kindly answer this question in Urdu langauge. 
