@@ -67,6 +67,7 @@ def main():
                 st.markdown(response_audio_html, unsafe_allow_html=True)
 
                 st.info(response_text)
+                os.remove(tts_audio_path)
 
 
 def Urdu_audio_to_text(temp_recording_path):
@@ -103,7 +104,8 @@ def response_to_urdu_audio(text, lang='ur'):
 def get_audio_base64(file_path):
     with open(file_path, "rb") as audio_file:
         audio_bytes = audio_file.read()
-    return base64.b64encode(audio_bytes).decode()
+    audio_response = base64.b64encode(audio_bytes).decode()
+    return audio_response
 
 def llmModelResponse(text):
     prompt = f"""Kindly answer this question in Urdu langauge. 
