@@ -62,9 +62,9 @@ def main():
             with col2:
                 # Convert the response text to speech
                 response_audio_html = response_to_urdu_audio(response_text)
-                st.audio(response_audio_html)
+                #st.audio(response_audio_html)
 
-                #st.markdown(response_audio_html, unsafe_allow_html=True)
+                st.markdown(response_audio_html, unsafe_allow_html=True)
 
                 #st.info(response_text)
 
