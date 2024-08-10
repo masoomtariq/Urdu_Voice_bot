@@ -67,7 +67,7 @@ def main():
                 st.markdown(response_audio_html, unsafe_allow_html=True)
 
                 st.info(response_text)
-                os.remove(tts_audio_path)
+                #os.remove(tts_audio_path)
 
 
 def Urdu_audio_to_text(temp_recording_path):
@@ -86,7 +86,7 @@ def Urdu_audio_to_text(temp_recording_path):
 def response_to_urdu_audio(text, lang='ur'):
     tts = gTTS(text=text, lang=lang)
     tts_audio_path = tempfile.NamedTemporaryFile(suffix=".mp3", delete=False).name
-    tts.save(tts_audio_path)
+    #tts.save(tts_audio_path)
 
     # Get the base64 string of the audio file
     audio_base64 = get_audio_base64(tts_audio_path)
