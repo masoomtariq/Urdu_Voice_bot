@@ -82,7 +82,7 @@ def Urdu_audio_to_text(temp_recording_path):
             return "آپ کی آواز واضح نہیں ہے"
         except sr.RequestError:
             return "Sorry, my speech service is down"
-
+@st.cache
 def response_to_urdu_audio(text, lang='ur'):
     tts = gTTS(text=text, lang=lang)
     with tempfile.NamedTemporaryFile(suffix=".wav") as temp_audio:
