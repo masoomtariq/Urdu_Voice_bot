@@ -10,11 +10,11 @@ import os
 
 load_dotenv()
 
-GEMINI_API_KEY = os.getenv('GOOGLE_API_KEY')
+#GEMINI_API_KEY = os.getenv('GOOGLE_API_KEY')
 
 
 #GEMINI_API_KEY = os.environ.get('API_KEY')
-#GEMINI_API_KEY = st.secrets['GEMINI_API_KEY']
+GEMINI_API_KEY = st.secrets['GEMINI_API_KEY']
 
 genai.configure(api_key=GEMINI_API_KEY)
 
@@ -28,7 +28,7 @@ def main():
     st.sidebar.write("")  # Adds one line of space
 
     
-    st.sidebar.write("Developed by Masoom Tariq")
+    st.sidebar.write("Developed by :blue[Masoom Tariq]")
 
     urdu_recorder = audio_recorder(text='بولیۓ', icon_size="1x", icon_name="microphone-lines", key="urdu_recorder")
 
@@ -37,7 +37,7 @@ def main():
         with st.container():
             col1, col2 = st.columns(2)
 
-            with col2:
+            with col1:
                 # Display the audio file                                                                                                                                                                                                                                                                                                                                                                                                                                                         
                 st.audio(urdu_recorder)
 
@@ -59,7 +59,7 @@ def main():
         with st.container():
             col1, col2 = st.columns(2)
 
-            with col1:
+            with col2:
                 # Convert the response text to speech
                 response_audio_html = response_to_urdu_audio(response_text)
 
