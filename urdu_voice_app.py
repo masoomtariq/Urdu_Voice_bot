@@ -102,7 +102,7 @@ def response_to_urdu_audio(text, lang='ur'):
     """
     return audio_html
 
-#@st.cache
+@st.cache
 def get_audio_base64(tts_audio_path):
     with open(tts_audio_path, 'rb') as audio_file:
         audio_bytes = audio_file.read()
