@@ -61,10 +61,12 @@ def main():
 
             with col2:
                 # Convert the response text to speech
-                response_audio_html = response_to_urdu_audio(response_text)
+                #response_audio_html = response_to_urdu_audio(response_text)
                 
 
-                st.markdown(response_audio_html, unsafe_allow_html=True)
+                #st.markdown(response_audio_html, unsafe_allow_html=True)
+                tts = gTTS(text = response_text, lang = 'ur')
+                st.audio(tts.get_bytes(), format="audio/mp3")
 
                 st.info(response_text)
 
@@ -102,7 +104,7 @@ def response_to_urdu_audio(text, lang='ur'):
     """
     return audio_html
 
-@st.cache
+#@st.cache
 def get_audio_base64(tts_audio_path):
     with open(tts_audio_path, 'rb') as audio_file:
         audio_bytes = audio_file.read()
