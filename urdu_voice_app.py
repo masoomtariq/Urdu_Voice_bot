@@ -61,12 +61,12 @@ def main():
 
             with col2:
                 # Convert the response text to speech
-                response_audio_html = response_to_urdu_audio(response_text)
+                #response_audio_html = response_to_urdu_audio(response_text)
                 st.info(response_text)
 
-                st.markdown(response_audio_html, unsafe_allow_html=True)
-                #tts = gTTS(text = response_text, lang = 'ur')
-                #st.audio(tts.get_bytes(), format="audio/mp3")
+                #st.markdown(response_audio_html, unsafe_allow_html=True)
+                tts = gTTS(text = response_text, lang = 'ur')
+                st.audio(tts.get_bytes(), format=".mp3")
 
 
 def Urdu_audio_to_text(temp_recording_path):
@@ -81,7 +81,7 @@ def Urdu_audio_to_text(temp_recording_path):
             return "آپ کی آواز واضح نہیں ہے"
         except sr.RequestError:
             return "Sorry, my speech service is down"
-
+'''
 def response_to_urdu_audio(text, lang='ur'):
     tts = gTTS(text=text, lang=lang)
     with tempfile.NamedTemporaryFile(suffix=".wav", delete = False) as temp_audio:
@@ -108,7 +108,7 @@ def get_audio_base64(tts_audio_path):
         audio_bytes = audio_file.read()
         audio_base64 = base64.b64encode(audio_bytes).decode()
     return audio_base64
-
+'''
 def llmModelResponse(text):
     prompt = f"""Kindly answer this question in Urdu langauge. 
     Dont use any other language or chaaracters from other languages.
