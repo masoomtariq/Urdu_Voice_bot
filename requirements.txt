@@ -5,4 +5,4 @@ audio_recorder_streamlit
 google.generativeai
 python-dotenv
 pydub
-playsound=1.2.2
+playsound==1.2.2 # Specify version to avoid conflicts
