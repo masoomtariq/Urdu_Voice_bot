@@ -61,12 +61,12 @@ def main():
 
             with col2:
                 # Convert the response text to speech
-                #response_audio_html = response_to_urdu_audio(response_text)
+                response_audio_html = response_to_urdu_audio(response_text)
                 
 
-                #st.markdown(response_audio_html, unsafe_allow_html=True)
-                tts = gTTS(text = response_text, lang = 'ur')
-                st.audio(tts.get_bytes(), format="audio/mp3")
+                st.markdown(response_audio_html, unsafe_allow_html=True)
+                #tts = gTTS(text = response_text, lang = 'ur')
+                #st.audio(tts.get_bytes(), format="audio/mp3")
 
                 st.info(response_text)
 
